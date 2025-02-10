@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fun Fact Generator</title>
+  <style>
+    /* CSS styles go here */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      text-align: center;
+      padding: 50px;
+      background-color: #f8f8f8; 
+      color: #333; 
+    }
+
+    h1 {
+      color: #2c3e50; 
+      margin-bottom: 30px;
+    }
+
+    #fun-fact {
+      font-size: 1.8em;
+      margin-bottom: 40px; 
+      line-height: 1.5; 
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px; 
+      transition: background-color 0.3s ease; 
+    }
+
+    button:hover {
+      background-color: #2980b9; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Fun Fact of the Day</h1>
+  <p id="fun-fact"></p>
+  <button id="generate-fact">Generate</button>
+
+  <script>
+    // JavaScript code goes here
+    const funFactElement = document.getElementById('fun-fact');
+    const generateFactButton = document.getElementById('generate-fact');
+    const funFacts = [ 
+      {"fact": "The first car was invented in 1886 by Karl Benz."},
+      {"fact": "The world's first speeding ticket was issued in 1902 for going 45 mph."},
+      {"fact": "The Ford Model T was available in any color, as long as it was black."},
+      {"fact": "It takes about 30,000 parts to build a modern car."},
+      {"fact": "The average car contains over 100 pounds of copper wiring."},
+      {"fact": "The world record for the longest car ever built is held by a limousine that is over 100 feet long."},
+      {"fact": "The first car radio was introduced in 1922."},
+      {"fact": "The world's largest tire manufacturer is LEGO."},
+      {"fact": "The average American spends about 60 hours per year stuck in traffic."},
+      {"fact": "The first windshield wipers were invented in 1903."},
+      {"fact": "The world's first traffic light was installed in London in 1868."},
+      {"fact": "The first mass-produced electric car was the General Motors EV1, released in 1996."}
+    ];
+
+    function displayRandomFact() {
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      funFactElement.textContent = funFacts[randomIndex].fact;
+    }
+
+    generateFactButton.addEventListener('click', displayRandomFact);
+    //Display a fact on page load
+    displayRandomFact();
+  </script>
+</body>
+</html>
